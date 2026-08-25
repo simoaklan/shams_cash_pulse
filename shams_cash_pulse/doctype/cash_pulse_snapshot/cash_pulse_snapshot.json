@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-08-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "snapshot_date",
+  "cash_section",
+  "frozen_total",
+  "frozen_pct",
+  "months_frozen",
+  "overdue_total",
+  "under_priced_count",
+  "cycle_section",
+  "dio_days",
+  "dso_days",
+  "column_break_cycle",
+  "dpo_days",
+  "ccc_days",
+  "context_section",
+  "total_inventory",
+  "available_cash",
+  "column_break_context",
+  "annual_cogs",
+  "annual_sales",
+  "detail_section",
+  "frozen_rows",
+  "overdue_rows",
+  "under_priced"
+ ],
+ "fields": [
+  {
+   "fieldname": "snapshot_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Snapshot Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cash_section",
+   "fieldtype": "Section Break",
+   "label": "Cash Position"
+  },
+  {
+   "fieldname": "frozen_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Frozen Cash Total"
+  },
+  {
+   "fieldname": "frozen_pct",
+   "fieldtype": "Percent",
+   "label": "Frozen % of Inventory"
+  },
+  {
+   "fieldname": "months_frozen",
+   "fieldtype": "Float",
+   "label": "Months of Expenses Frozen",
+   "precision": "1"
+  },
+  {
+   "fieldname": "overdue_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Overdue Receivables"
+  },
+  {
+   "fieldname": "under_priced_count",
+   "fieldtype": "Int",
+   "label": "Underpriced Items Count"
+  },
+  {
+   "fieldname": "cycle_section",
+   "fieldtype": "Section Break",
+   "label": "Cash Conversion Cycle"
+  },
+  {
+   "fieldname": "dio_days",
+   "fieldtype": "Float",
+   "label": "DIO Days",
+   "precision": "1"
+  },
+  {
+   "fieldname": "dso_days",
+   "fieldtype": "Float",
+   "label": "DSO Days",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_cycle",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dpo_days",
+   "fieldtype": "Float",
+   "label": "DPO Days",
+   "precision": "1"
+  },
+  {
+   "fieldname": "ccc_days",
+   "fieldtype": "Float",
+   "label": "CCC Days",
+   "precision": "1"
+  },
+  {
+   "fieldname": "context_section",
+   "fieldtype": "Section Break",
+   "label": "Context Figures"
+  },
+  {
+   "fieldname": "total_inventory",
+   "fieldtype": "Currency",
+   "label": "Total Inventory Value"
+  },
+  {
+   "fieldname": "available_cash",
+   "fieldtype": "Currency",
+   "label": "Available Cash"
+  },
+  {
+   "fieldname": "column_break_context",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "annual_cogs",
+   "fieldtype": "Currency",
+   "label": "Annual COGS"
+  },
+  {
+   "fieldname": "annual_sales",
+   "fieldtype": "Currency",
+   "label": "Annual Sales"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "detail_section",
+   "fieldtype": "Section Break",
+   "label": "Detail Snapshots (JSON)"
+  },
+  {
+   "fieldname": "frozen_rows",
+   "fieldtype": "Long Text",
+   "label": "Frozen Rows JSON"
+  },
+  {
+   "fieldname": "overdue_rows",
+   "fieldtype": "Long Text",
+   "label": "Overdue Rows JSON"
+  },
+  {
+   "fieldname": "under_priced",
+   "fieldtype": "Long Text",
+   "label": "Underpriced JSON"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Cash Pulse",
+ "name": "Cash Pulse Snapshot",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "snapshot_date",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "creation": "2026-08-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "movement_section",
+  "sales_movement_vouchers",
+  "frozen_threshold_days",
+  "column_break_movement",
+  "cogs_source",
+  "cogs_account",
+  "cash_section",
+  "excluded_cash_accounts",
+  "framing_section",
+  "auto_monthly_expense",
+  "manual_monthly_expense",
+  "column_break_framing",
+  "healthy_ccc_days",
+  "healthy_dso_days",
+  "detail_section",
+  "detail_row_limit"
+ ],
+ "fields": [
+  {
+   "fieldname": "movement_section",
+   "fieldtype": "Section Break",
+   "label": "مصادر حركة المخزون"
+  },
+  {
+   "description": "أنواع المستندات التي تُخرج المخزون بيعاً. أضف Sales Invoice و/أو Delivery Note حسب طريقة عمل العميل.",
+   "fieldname": "sales_movement_vouchers",
+   "fieldtype": "Table",
+   "label": "أنواع مستندات حركة البيع",
+   "options": "Cash Pulse Voucher Type"
+  },
+  {
+   "default": "90",
+   "description": "عدد الأيام التي إذا لم يتحرك الصنف خلالها يُعتبر نقداً مجمّداً.",
+   "fieldname": "frozen_threshold_days",
+   "fieldtype": "Int",
+   "label": "عتبة النقد المجمّد (أيام)"
+  },
+  {
+   "fieldname": "column_break_movement",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "GL Account",
+   "description": "مصدر حساب تكلفة البضاعة المباعة. GL Account أدق في أغلب الحالات.",
+   "fieldname": "cogs_source",
+   "fieldtype": "Select",
+   "label": "مصدر COGS",
+   "options": "GL Account\nStock Ledger"
+  },
+  {
+   "depends_on": "eval:doc.cogs_source=='GL Account'",
+   "description": "اتركه فارغاً لاستخدام كل الحسابات من نوع Cost of Goods Sold تلقائياً.",
+   "fieldname": "cogs_account",
+   "fieldtype": "Link",
+   "label": "حساب COGS محدد (اختياري)",
+   "options": "Account"
+  },
+  {
+   "fieldname": "cash_section",
+   "fieldtype": "Section Break",
+   "label": "حسابات النقد"
+  },
+  {
+   "description": "حسابات نقد/بنك تُستبعد من حساب النقد المتاح (حسابات وسيطة، بوابات دفع، تسهيلات). تُترك فارغة لاستخدام كل حسابات Cash/Bank.",
+   "fieldname": "excluded_cash_accounts",
+   "fieldtype": "Table",
+   "label": "الحسابات النقدية المستبعدة",
+   "options": "Cash Pulse Excluded Account"
+  },
+  {
+   "fieldname": "framing_section",
+   "fieldtype": "Section Break",
+   "label": "تأطير الألم والمعايير"
+  },
+  {
+   "default": "1",
+   "description": "احسب المصروف الشهري تلقائياً من حسابات المصروفات (عدا COGS). عطّله لإدخاله يدوياً.",
+   "fieldname": "auto_monthly_expense",
+   "fieldtype": "Check",
+   "label": "حساب المصروف الشهري تلقائياً"
+  },
+  {
+   "depends_on": "eval:!doc.auto_monthly_expense",
+   "description": "المصروف الشهري التقديري (يُستخدم لتأطير 'كم شهر مصروفات').",
+   "fieldname": "manual_monthly_expense",
+   "fieldtype": "Currency",
+   "label": "المصروف الشهري (يدوي)"
+  },
+  {
+   "fieldname": "column_break_framing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "60",
+   "description": "المعيار الصحي لدورة تحويل النقد في قطاع العميل (يُستخدم للمقارنة).",
+   "fieldname": "healthy_ccc_days",
+   "fieldtype": "Int",
+   "label": "المعيار الصحي لـ CCC (أيام)"
+  },
+  {
+   "default": "60",
+   "description": "العتبة التي يُعتبر DSO فوقها مرتفعاً (للتنبيه البصري).",
+   "fieldname": "healthy_dso_days",
+   "fieldtype": "Int",
+   "label": "عتبة DSO الصحية (أيام)"
+  },
+  {
+   "fieldname": "detail_section",
+   "fieldtype": "Section Break",
+   "label": "إعدادات العرض"
+  },
+  {
+   "default": "20",
+   "description": "عدد الصفوف في جداول التفصيل (النقد المجمّد، الذمم).",
+   "fieldname": "detail_row_limit",
+   "fieldtype": "Int",
+   "label": "حد صفوف التفصيل"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-08-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Cash Pulse",
+ "name": "Cash Pulse Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

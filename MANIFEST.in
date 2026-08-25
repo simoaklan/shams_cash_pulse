@@ -1,0 +1,16 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+recursive-include shams_cash_pulse *.css
+recursive-include shams_cash_pulse *.csv
+recursive-include shams_cash_pulse *.html
+recursive-include shams_cash_pulse *.ico
+recursive-include shams_cash_pulse *.js
+recursive-include shams_cash_pulse *.json
+recursive-include shams_cash_pulse *.md
+recursive-include shams_cash_pulse *.png
+recursive-include shams_cash_pulse *.py
+recursive-include shams_cash_pulse *.svg
+recursive-include shams_cash_pulse *.txt
+recursive-exclude shams_cash_pulse *.pyc
