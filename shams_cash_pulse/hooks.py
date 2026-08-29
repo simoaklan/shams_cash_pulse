@@ -4,7 +4,7 @@ app_publisher = "SHAMS SOLUTIONS"
 app_description = "لوحة نبض النقد لمتابعة السيولة ودورة تحويل النقد في ERPNext"
 app_email = "info@shamss.store"
 app_license = "MIT"
-app_version = "0.1.0"
+app_version = "0.2.0"
 
 # المهام المجدولة
 # ------------------------------

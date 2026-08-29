@@ -30,3 +30,27 @@ def after_install():
         frappe.db.commit()
     except Exception:
         frappe.log_error(title="Cash Pulse: فشل التهيئة", message=frappe.get_traceback())
+
+    # ===== تهيئة إعدادات التنبؤ الشرائي =====
+    try:
+        pf = frappe.get_single("Purchase Forecast Settings")
+
+        if not pf.lead_time_days:
+            pf.lead_time_days = 90
+        if not pf.coverage_days:
+            pf.coverage_days = 180
+        if not pf.measure_period_mode:
+            pf.measure_period_mode = "First Sale"
+        if not pf.stockout_price_source:
+            pf.stockout_price_source = "Item Price"
+        pf.exclude_cancelled = 1
+
+        # مستندات بيع افتراضية
+        if not pf.sales_vouchers:
+            pf.append("sales_vouchers", {"voucher_type": "Sales Invoice"})
+            pf.append("sales_vouchers", {"voucher_type": "Delivery Note"})
+
+        pf.save(ignore_permissions=True)
+        frappe.db.commit()
+    except Exception:
+        frappe.log_error(title="Purchase Forecast: فشل التهيئة", message=frappe.get_traceback())
