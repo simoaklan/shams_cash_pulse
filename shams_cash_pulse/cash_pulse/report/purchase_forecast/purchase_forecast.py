@@ -10,7 +10,6 @@ def execute(filters=None):
     columns = get_columns()
     raw = compute_forecast()
 
-    # فلترة العرض (لا تمسّ الحساب)
     only_order = filters.get("only_to_order")
     only_stockout = filters.get("only_stockout")
 
@@ -43,17 +42,17 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        {"label": "الكمية المطلوبة", "fieldname": "to_order", "fieldtype": "Int", "width": 120},
-        {"label": "الحالة", "fieldname": "status", "fieldtype": "Data", "width": 80},
-        {"label": "الصنف", "fieldname": "item_name", "fieldtype": "Data", "width": 280},
-        {"label": "رقم الصنف", "fieldname": "item_code", "fieldtype": "Data", "width": 130},
-        {"label": "بيع الفترة", "fieldname": "sold_period", "fieldtype": "Int", "width": 90},
-        {"label": "معدّل/يوم", "fieldname": "daily_rate", "fieldtype": "Float", "width": 90, "precision": 2},
-        {"label": "الطلب المتوقع", "fieldname": "expected_demand", "fieldtype": "Int", "width": 110},
-        {"label": "مخزون", "fieldname": "bin_qty", "fieldtype": "Int", "width": 90},
-        {"label": "الصالح", "fieldname": "valid_stock", "fieldtype": "Int", "width": 90},
-        {"label": "المهدّد", "fieldname": "expired_stock", "fieldtype": "Int", "width": 90},
+        {"label": "الكمية المطلوبة", "fieldname": "to_order", "fieldtype": "Int", "width": 110},
+        {"label": "الحالة", "fieldname": "status", "fieldtype": "Data", "width": 70},
+        {"label": "الصنف", "fieldname": "item_name", "fieldtype": "Data", "width": 240},
+        {"label": "رقم الصنف", "fieldname": "item_code", "fieldtype": "Data", "width": 120},
+        {"label": "بيع الفترة", "fieldname": "sold_period", "fieldtype": "Int", "width": 80},
+        {"label": "معدّل/يوم", "fieldname": "daily_rate", "fieldtype": "Float", "width": 80, "precision": 2},
+        {"label": "الطلب المتوقع", "fieldname": "expected_demand", "fieldtype": "Int", "width": 100},
+        {"label": "مخزون", "fieldname": "bin_qty", "fieldtype": "Int", "width": 80},
+        {"label": "الصالح", "fieldname": "valid_stock", "fieldtype": "Int", "width": 80},
+        {"label": "المهدّد", "fieldname": "expired_stock", "fieldtype": "Int", "width": 80},
         {"label": "التكلفة", "fieldname": "rate", "fieldtype": "Currency", "width": 90},
-        {"label": "قيمة الطلب", "fieldname": "order_value", "fieldtype": "Currency", "width": 120},
-        {"label": "التوضيح", "fieldname": "explanation", "fieldtype": "Data", "width": 400},
+        {"label": "قيمة الطلب", "fieldname": "order_value", "fieldtype": "Currency", "width": 110},
+        {"label": "التوضيح", "fieldname": "explanation", "width": 400},
     ]
