@@ -43,17 +43,17 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        {"label": "الكمية المطلوبة", "fieldname": "to_order", "fieldtype": "Int", "width": 120},
+        {"label": "الكمية المطلوبة", "fieldname": "to_order", "fieldtype": "Int", "width": 120, "align": "right"},
         {"label": "الحالة", "fieldname": "status", "fieldtype": "Data", "width": 75, "align": "center"},
         {"label": "الصنف", "fieldname": "item_name", "fieldtype": "Data", "width": 280, "align": "right"},
         {"label": "رقم الصنف", "fieldname": "item_code", "fieldtype": "Data", "width": 120, "align": "center"},
-        {"label": "بيع الفترة", "fieldname": "sold_period", "fieldtype": "Int", "width": 85},
-        {"label": "معدّل/يوم", "fieldname": "daily_rate", "fieldtype": "Float", "width": 80, "precision": 2},
-        {"label": "الطلب المتوقع", "fieldname": "expected_demand", "fieldtype": "Int", "width": 100},
-        {"label": "مخزون", "fieldname": "bin_qty", "fieldtype": "Int", "width": 80},
-        {"label": "الصالح", "fieldname": "valid_stock", "fieldtype": "Int", "width": 80},
-        {"label": "المهدّد", "fieldname": "expired_stock", "fieldtype": "Int", "width": 80},
-        {"label": "التكلفة", "fieldname": "rate", "fieldtype": "Currency", "width": 85},
-        {"label": "قيمة الطلب", "fieldname": "order_value", "fieldtype": "Currency", "width": 110},
-        {"label": "التوضيح", "fieldname": "explanation", "fieldtype": "Small Text", "width": 350},
+        {"label": "بيع الفترة", "fieldname": "sold_period", "fieldtype": "Int", "width": 85, "align": "right"},
+        {"label": "معدّل/يوم", "fieldname": "daily_rate", "fieldtype": "Float", "width": 80, "precision": 2, "align": "right"},
+        {"label": "الطلب المتوقع", "fieldname": "expected_demand", "fieldtype": "Int", "width": 100, "align": "right"},
+        {"label": "مخزون", "fieldname": "bin_qty", "fieldtype": "Int", "width": 80, "align": "right"},
+        {"label": "الصالح", "fieldname": "valid_stock", "fieldtype": "Int", "width": 80, "align": "right"},
+        {"label": "المهدّد", "fieldname": "expired_stock", "fieldtype": "Int", "width": 80, "align": "right"},
+        {"label": "التكلفة", "fieldname": "rate", "fieldtype": "Currency", "width": 85, "align": "right"},
+        {"label": "قيمة الطلب", "fieldname": "order_value", "fieldtype": "Currency", "width": 110, "align": "right"},
+        {"label": "التوضيح", "fieldname": "explanation", "fieldtype": "Data", "width": 350, "align": "right"},
     ]
