@@ -18,6 +18,12 @@ frappe.query_reports["Purchase Forecast"] = {
     ],
     "formatter": function (value, row, column, data, default_formatter) {
         value = default_formatter(value, row, column, data);
+
+        // Guard against footer, total, or empty row rendering
+        if (!data) {
+            return value;
+        }
+
         if (column.fieldname == "status") {
             if (data.status == "نافد") {
                 value = "<span style='color:#fff;background:#C0392B;padding:2px 8px;border-radius:4px;'>" + value + "</span>";
